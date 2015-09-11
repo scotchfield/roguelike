@@ -4,6 +4,10 @@ var game = (function () {
 	var canvas, state, render_cb = [],
 		width = 40, height = 40,
 
+	player = {
+		x: undefined, y: undefined,
+	},
+
 	options = {
 		font: '14pt monospace',
 		tileWidth: 16,
@@ -27,7 +31,10 @@ var game = (function () {
 			cb();
 		});
 	},
-	setup = function () {},
+	setup = function () {
+		player.x = 1;
+		player.y = 1;
+	},
 
 	renderTitle = function () {
 		rl.write('Hello, World!', 1, 1);
